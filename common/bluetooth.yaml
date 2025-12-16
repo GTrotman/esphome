@@ -1,0 +1,17 @@
+################################################################################
+# Bluetooth
+################################################################################
+bluetooth_proxy:
+  active: true
+
+esp32_ble_tracker:
+  scan_parameters:
+    # Don't auto start BLE scanning.
+    continuous: False
+    
+    # Whether to send scan-request packets to devices to gather more info (like devicename)
+    active: true
+    # Listen on BLE for 300ms out of ever 320ms interval
+    # If the device is failing to keep up, reduce the window to give it more time to do stuff
+    interval: 320ms # suggested 211ms # default 320ms
+    window:   300ms # suggested 120ms # default 300ms
